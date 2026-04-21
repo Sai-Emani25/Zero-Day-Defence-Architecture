@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: "Courier New", monospace;
+  --font-display: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+  --color-security-bg: #0a0c10;
+  --color-security-panel: #161b22;
+  --color-security-border: #30363d;
+  --color-security-accent: #3fb950;
+  --color-security-accent-dim: rgba(63, 185, 80, 0.1);
+  --color-security-danger: #f85149;
+  --color-security-text: #c9d1d9;
+  --color-security-text-dim: #8b949e;
+}
+
+@layer base {
+  body {
+    @apply bg-security-bg text-security-text font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-sans font-bold text-security-text;
+  }
+}
+
+@layer components {
+  .geometric-grid {
+    @apply grid gap-[1px] bg-security-border;
+  }
+
+  .sharp-panel {
+    @apply bg-security-panel border border-security-border rounded-[4px];
+  }
+
+  .pillar-card {
+    @apply border border-security-border p-4 rounded-[4px] bg-security-bg;
+  }
+
+  .pillar-title {
+    @apply text-[11px] uppercase text-security-text-dim mb-2 tracking-[0.5px];
+  }
+
+  .pillar-val {
+    @apply text-sm font-semibold text-security-text;
+  }
+
+  .tag {
+    @apply inline-block px-1.5 py-0.5 bg-security-border text-security-text-dim rounded-[3px] text-[9px] uppercase mt-2;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-security-bg;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-security-border rounded-full hover:bg-zinc-700;
+}
